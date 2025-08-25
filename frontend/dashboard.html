@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Task Manager</title>
+  <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+<body>
+  <h2>My Tasks</h2>
+
+<form id="dashboardForm"> 
+    <input type="text" id="title" placeholder="Title" required /> 
+    <input type="text" id="content" placeholder="Content" required /> 
+     <select id="priority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select> 
+    <button type="submit">Add</button> 
+  </form>
+
+  <br/>
+  <button id="logoutBtn" onclick="logout()">Logout</button>
+
+  <ul id="taskList"></ul>
+
+  <script src="JS/dashboard.js"></script>
+</body>
+</html>

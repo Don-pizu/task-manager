@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Kim",
+    "email": "kim@example.com",
+    "password": "$2b$10$ju4waJvrqPA2juYe9I1/vO6clhxbPzplPGu3YGMjCFJi6GqV95bRm"
+  },
+  {
+    "name": "Kim1",
+    "email": "kim1@example.com",
+    "password": "$2b$10$uj/iD2EhhWDcrLEeKbPGWeSn/gZSACRd0Q1W9gniMX2CKltI3oK0S"
+  },
+  {
+    "name": "log",
+    "email": "log@example.com",
+    "password": "$2b$10$nswTmiDXzTCVABnu/5uPTOYoiEX/3HfKKGQEW2iPUyRbZ1mfxoYyC"
+  },
+  {
+    "name": "logg",
+    "email": "logg@example.com",
+    "password": "$2b$10$6qzZE8gBE8le44146KcbAO8RGIt9j23TbYh3aP1BAr8MWPGcU7Yh6"
+  }
+]

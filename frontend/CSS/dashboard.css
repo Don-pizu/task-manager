@@ -1,0 +1,6 @@
+/* Task priority colors */
+.low { color: green; font-weight: bold; }
+.medium { color: orange; font-weight: bold; }
+.high { color: red; font-weight: bold; }
+
+

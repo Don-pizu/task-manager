@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/Don-pizu/task-manager/issues"
   },
-  "homepage": "https://github.com/Don-pizu/task-manager#readme"
+  "homepage": "https://github.com/Don-pizu/task-manager#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^8.18.0",
+    "xss-clean": "^0.1.4"
+  }
 }
