@@ -62,16 +62,38 @@ async function loadTasks() {
     if (res.ok) {
        
        taskList.innerHTML = ''; // clear existing
+
         data.forEach(task => {
           const li = document.createElement('li');
 
-           li.innerHTML = `
-            <strong>Title: ${task.title}</strong>
-             <br/>Content: ${task.content} <br/>
-            Priority: <span class="${task.priority.toLowerCase()}">${task.priority}</span> <br/>
-            <button onclick="editTask('${task.id}')"> Edit</button>
-            <button onclick="deleteTask('${task.id}')"> Delete</button>
-          `;
+           // Title
+        const titleEl = document.createElement('strong');
+        titleEl.textContent = `Title: ${task.title}`;
+        li.appendChild(titleEl);
+        li.appendChild(document.createElement('br'));
+
+        // Content
+        li.appendChild(document.createTextNode(`Content: ${task.content}`));
+        li.appendChild(document.createElement('br'));
+
+        // Priority
+        const priorityEl = document.createElement('span');
+        priorityEl.className = task.priority.toLowerCase();
+        priorityEl.textContent = `Priority: ${task.priority}`;
+        li.appendChild(priorityEl);
+        li.appendChild(document.createElement('br'));
+
+        // Edit button
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.addEventListener('click', () => editTask(task.id));
+        li.appendChild(editBtn);
+
+        // Delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => deleteTask(task.id));
+        li.appendChild(deleteBtn);
 
           taskList.appendChild(li);
         });
@@ -92,10 +114,12 @@ async function editTask(id) {
   const newContent = prompt('Enter new content:');
   const newPriority = prompt('Enter new priority (Low, Medium, High):');
 
-  if (!newTitle || !newContent || !newPriority) {
+  /* if (!newTitle || !newContent || !newPriority) {       /// to maake user update all the fields 
     alert("All fields are required for updating task");
     return;
   }
+
+  */
 
   let normalizedPriority = newPriority.trim().toLowerCase();
 
@@ -105,7 +129,7 @@ async function editTask(id) {
   }
 
   // Capitalize again for saving
-  capitalizedPriority = normalizedPriority.charAt(0).toUpperCase() + normalizedPriority.slice(1);
+  const capitalizedPriority = normalizedPriority.charAt(0).toUpperCase() + normalizedPriority.slice(1);
 
   try {
     const res = await fetch(`${API}/update/${id}`, {

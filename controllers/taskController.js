@@ -1,13 +1,13 @@
 // controllers/taskController.js
 
 const express = require('express');
-const task = require('../models/task');
 const { readFile, writeFile } = require('../models/file');
 const path = require('path');
 
 const TASKS = path.join(__dirname, "../json/tasks.json");
 const USERS_FILE = path.join(__dirname, "../json/users.json");
 
+const validPriorities = ["Low", "Medium", "High"];
 
 
 //POST    create a task
@@ -17,6 +17,10 @@ exports.createTask = async (req, res, next) => {
 	if(!title || !content || !priority){
 		return res.status(400).send('Task title, content and priority are required');
 	}
+
+	 if (!validPriorities.includes(priority)) {
+      return res.status(400).send('Priority should be Low, Medium or High');
+    }
 
 	let tasks = readFile(TASKS);
 
@@ -58,6 +62,10 @@ exports.updateTask = async (req, res, next) => {
 		return res.status(404).send('Task not found');
 
 	const{ title, content, priority } = req.body;
+
+	if (priority && !validPriorities.includes(priority)) {
+      return res.status(400).send('Priority should be Low, Medium or High');
+    }
 
 	 task.title = title || task.title;
 	 task.content = content || task.content;

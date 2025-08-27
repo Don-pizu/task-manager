@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
   const email = eMail.toLowerCase();
   try {
-    const res = await fetch(`${API}/login`, {
+    const res = await fetch(`${API}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }) // ✅ Send as { email, password }
@@ -32,16 +32,20 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   }
 });
 
-//Singup function
-function signup() {
-  try {
-    window.location.href = 'signup.html'; 
-  } catch (err) {
-    console.error("Signup page missing:", err);
-    alert("Signup page not found. Please check your project files.");
+// Signup button handler
+document.addEventListener('DOMContentLoaded', () => {
+  const signupBtn = document.getElementById('signupBtn');
+  if (signupBtn) {
+    signupBtn.addEventListener('click', () => {
+      try {
+        window.location.href = 'signup.html';
+      } catch (err) {
+        console.error("Signup page missing:", err);
+        alert("Signup page not found. Please check your project files.");
+      }
+    });
   }
-}
-
+});
 
 
 /* 

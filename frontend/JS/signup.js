@@ -14,7 +14,7 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
   const email = eMail.toLowerCase();
 
   try {
-    const res = await fetch(`${API}/register`, {
+    const res = await fetch(`${API}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }) 

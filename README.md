@@ -27,24 +27,25 @@ git clone https://github.com/Don-pizu/task-manager.git
 
 project-root/
 ├── controllers/
-    |-authController.js
-    |-taskController.js
+│   ├── authController.js
+│   └── taskController.js
 ├── models/
-    |-file.js
-    |-task.js
-    |-User.js
+│   ├── file.js
+│   ├── task.js
+│   └── user.js
 ├── routes/
-    | -authRoutes.js
-    |-taskRoutes.js
+│   ├── authRoutes.js
+│   └── taskRoutes.js
 ├── middleware/
 ├── config/
-    -session.js
+│   └── session.js
 ├── tests/
 ├── app.js
 ├── server.js
+├── swagger.js
 ├── .env
 ├── .gitignore
-├── README.md
+└── README.md
 
 -npm install
 -node server.js
@@ -53,6 +54,26 @@ project-root/
 -Node.js
 -Express.js
 -Session based authentication
+-swagger
+
+## API Routes
+
+Authentication Routes
+
+Method                Endpoint                 Description
+POST              /api/auth/register         Register a new user
+POST              /api/auth/login               Login user
+POST              /api/auth/logout              Logout user
+
+Task Routes (CRUD)
+
+Method                Endpoint                 Description
+POST                 /api/task              Create a new task
+GET                  /api/tasks               Get all tasks
+PUT                  /api/update/:id        Update task by ID
+DELETE               /api/delete/:id          Delete task by ID
+
+
 
 ## Author name
 

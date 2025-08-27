@@ -18,5 +18,15 @@
     "name": "logg",
     "email": "logg@example.com",
     "password": "$2b$10$6qzZE8gBE8le44146KcbAO8RGIt9j23TbYh3aP1BAr8MWPGcU7Yh6"
+  },
+  {
+    "name": "don",
+    "email": "don@example.com",
+    "password": "$2b$10$v3wp/azjmhs4Wy2ZGJv2i.vVEn9lMWD9p2tYJE.QWWxaO59CoEQqa"
+  },
+  {
+    "name": "loo",
+    "email": "loo@example.com",
+    "password": "$2b$10$w4h5pL2ZEBsDmZ5KHEETk..h8srE8dyYhDEwqejpk5bn73KMakeFq"
   }
 ]
