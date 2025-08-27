@@ -1,4 +1,6 @@
-const API = 'http://localhost:5000/api'; // for testing
+//const API = 'http://localhost:5000/api'; // for testing
+
+const API = 'https://task-manager-qzog.onrender.com/api';   //for deployment
 
 // Handle form submission for task
 document.getElementById('dashboardForm').addEventListener('submit', async (e) => {
