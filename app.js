@@ -71,8 +71,9 @@ app.use('/api', limiter);
 
 // CORS configuration
 const allowedOrigins = [
-  'http://localhost:5000',    // frontend url
-  'https://task-manager-qzog.onrender.com',// your deployed frontend
+  'http://localhost:5000',   
+  'https://task-manager-qzog.onrender.com',// deployed frontend
+  'https://task-manager-three-peach.vercel.app', // frontend
   ]; 
 
 app.use(cors({
