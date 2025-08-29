@@ -8,6 +8,7 @@ const fs = require('fs');
 
 
 // NEW: security libs
+const cors = require("cors");
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const sanitize = require('mongo-sanitize');
