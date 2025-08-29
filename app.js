@@ -6,6 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
+
 // NEW: security libs
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
@@ -55,7 +56,7 @@ app.use((req, res, next) => {
     }
   }
 
-  next();   // ✅ important to call next
+  next();   
 });
 
   //ratelimit
@@ -65,6 +66,29 @@ max: 100, // max 100 requests per IP
 message: 'Too many requests from this IP, please try again later.' 
 }); 
 app.use('/api', limiter);
+
+
+// CORS configuration
+const allowedOrigins = [
+  'http://localhost:5000',    // frontend url
+  'https://task-manager-qzog.onrender.com',// your deployed frontend
+  ]; 
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
+app.use(express.static(path.join(__dirname, "public"))); // serve frontend
 
 
 

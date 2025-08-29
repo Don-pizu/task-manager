@@ -28,5 +28,10 @@
     "name": "loo",
     "email": "loo@example.com",
     "password": "$2b$10$w4h5pL2ZEBsDmZ5KHEETk..h8srE8dyYhDEwqejpk5bn73KMakeFq"
+  },
+  {
+    "name": "yes",
+    "email": "yes@gmail.com",
+    "password": "$2b$10$uzF3.X9h26aOZxWyqlrYaezw6P0M8yEPpe.NscwVNW8FlhQ9nOzDa"
   }
 ]
