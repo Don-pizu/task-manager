@@ -33,5 +33,10 @@
     "name": "yes",
     "email": "yes@gmail.com",
     "password": "$2b$10$uzF3.X9h26aOZxWyqlrYaezw6P0M8yEPpe.NscwVNW8FlhQ9nOzDa"
+  },
+  {
+    "name": "online",
+    "email": "online@example.com",
+    "password": "$2b$10$viH7a4sb3kK/6x4un/t9Q.JoCbkrI7EQZS4LlbcPENqtqGs3CZUPW"
   }
 ]

@@ -17,12 +17,12 @@ const options = {
         url: 'http://localhost:5000/api', // for local development
         description: 'Local server',
       },
-      /*
+      
       {
-        url: 'https://finance-tracker-rcx7.onrender.com/api', // for Render deployment
+        url: 'https://task-manager-qzog.onrender.com/api-doc', // for Render deployment
         description: 'Production server',
       },
-      */
+      
     ],
     components: {
       securitySchemes: {
