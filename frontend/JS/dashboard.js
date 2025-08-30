@@ -15,7 +15,8 @@ document.getElementById('dashboardForm').addEventListener('submit', async (e) =>
     const res = await fetch(`${API}/task`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, content, priority }) 
+      body: JSON.stringify({ title, content, priority }),
+      credentials: 'include'   // allow cookies to be sent
     });
 
     const data = await res.json();
@@ -57,6 +58,7 @@ async function loadTasks() {
     const res = await fetch (`${API}/tasks`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include'   // allow cookies to be sent
     });
 
     const data = await res.json();
@@ -137,7 +139,8 @@ async function editTask(id) {
     const res = await fetch(`${API}/update/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: newTitle, content: newContent, priority: capitalizedPriority })
+      body: JSON.stringify({ title: newTitle, content: newContent, priority: capitalizedPriority }),
+      credentials: 'include'   // allow cookies to be sent
     });
 
     const data = await res.json();
@@ -162,6 +165,7 @@ async function deleteTask(id) {
     const res = await fetch(`${API}/delete/${id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include'   // allow cookies to be sent
     });
 
     const data = await res.json();

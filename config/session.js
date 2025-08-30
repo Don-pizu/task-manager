@@ -8,6 +8,9 @@ const sessionMiddleware = session({
 	saveUninitialized: false,
 	cookie: {
 		maxAge: 3600000,    // 1 hour
+		httpOnly: true,    // prevents JS from reading the cookie
+	    secure: true,      //  required for cross-site HTTPS 
+	    sameSite: "none"   // llow cookies across domains (Vercel <-> Render)
 	}
 	});
 	
