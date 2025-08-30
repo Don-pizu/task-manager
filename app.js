@@ -89,7 +89,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-
+//to work from vercel frontend i will have to comment this static out
 app.use(express.static(path.join(__dirname, "public"))); // serve frontend
 
 
